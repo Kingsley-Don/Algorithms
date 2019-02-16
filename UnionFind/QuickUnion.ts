@@ -17,6 +17,11 @@ class QuickUnionUF {
   union = (p: number, q: number): void => {
     const i: number = this.root(p)
     const j: number = this.root(q)
+
+    if (i === j) {
+      return
+    }
+
     this.id[i] = j
   }
 }
